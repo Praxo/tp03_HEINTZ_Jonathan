@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col xs-12">
+    <h1 class="display-3">Pizzaria mamma mia </h1>
+    <br />
+    <div class="from-group">
+      <label for="search">Rechercher une pizza</label>
+      <br />
+      <input [(ngModel)]="search" (ngModelChange)="onChange()" id="search" />
+    </div>
+    <hr />
+    <ul class="list-group">
+      <li *ngFor="let c of catalogues | async" class="list-group-item">
+        {{c.libelle}} - {{c.price}} €
+      </li>
+    </ul>
+  </div>
+</div>
